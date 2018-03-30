@@ -70,84 +70,96 @@
     // echo PI;
 
 
-    $arr = array(
-        'so_1',
-        'so_3',
-        'so_1',
-        'so_3',
-        'so_1',
-        'so_3',
-        'so_1',
-        'so_3',
-        'so_1',
-        'so_3',
-        'so_1',
-        'so_3'
-    );
-    echo "<pre>";
-    print_r($arr);
-    echo "</pre>";
+    // $arr = array(
+    //     'so_1',
+    //     'so_3',
+    //     'so_1',
+    //     'so_3',
+    //     'so_1',
+    //     'so_3',
+    //     'so_1',
+    //     'so_3',
+    //     'so_1',
+    //     'so_3',
+    //     'so_1',
+    //     'so_3'
+    // );
+    // echo "<pre>";
+    // print_r($arr);
+    // echo "</pre>";
 
-    //echo $arr[1];
+    // //echo $arr[1];
 
-    for($i = 0 ;  $i < count($arr) ; $i++){
-        echo $arr[$i];
-        echo " --- ";
-        echo $i;
-        echo "<br>";
-    }
+    // for($i = 0 ;  $i < count($arr) ; $i++){
+    //     echo $arr[$i];
+    //     echo " --- ";
+    //     echo $i;
+    //     echo "<br>";
+    // }
+
+    // echo "<hr>";
+
+    // foreach($arr as $key => $item){
+    //     echo $item;
+    //     echo " --- ";
+    //     echo $key;
+    //     echo "<br>";
+    // }
+
+
+    // $arr = array(
+    //     2=> 'so_2',
+    //         422345678,
+    //     6=>'so_6',
+    //     5=> 'so_5',
+    //         'so_1',
+    //         6,
+    //         'so_1',
+    //     'user'=>'so_3',
+    //         'so_1',
+    //     10=>    'so_10',
+    //         1234567,
+    //         'so_3'
+    // );
+
+    // echo count($arr);
+
+    // echo "<pre>";
+    // print_r($arr);
+    // echo "</pre>";
+
+    // foreach($arr as $key => $item){
+    //     echo $item;
+    //     echo " --- ";
+    //     echo $key;
+    //     echo "<br>";
+    // }
+
+    // switch('user'){
+    //     case 3 : {
+    //         echo 3;
+    //         break;
+    //     }
+    //     case 5 : {
+    //         echo 5;
+    //         break;
+    //     }
+    //     default: echo "ko ton tai"; 
+
+    // }
 
     echo "<hr>";
-
-    foreach($arr as $key => $item){
-        echo $item;
-        echo " --- ";
-        echo $key;
-        echo "<br>";
-    }
-
-
-    $arr = array(
-        2=> 'so_2',
-            422345678,
-        6=>'so_6',
-        5=> 'so_5',
-            'so_1',
-            6,
-            'so_1',
-        'user'=>'so_3',
-            'so_1',
-        10=>    'so_10',
-            1234567,
-            'so_3'
-    );
-
-    echo count($arr);
-
-    echo "<pre>";
-    print_r($arr);
-    echo "</pre>";
-
-    foreach($arr as $key => $item){
-        echo $item;
-        echo " --- ";
-        echo $key;
-        echo "<br>";
-    }
-
-    switch('user'){
-        case 3 : {
-            echo 3;
-            break;
-        }
-        case 5 : {
-            echo 5;
-            break;
-        }
-        default: echo "ko ton tai"; 
-
-    }
     
 
+
+
+    $a = 1;
+    $b = 2;
+    $a+=1; //$a = $a + 1;
+
+    $a+=$b; //$a = $a+$b =  4
+
+    echo $a;
+        
 
 ?>  
