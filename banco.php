@@ -17,10 +17,12 @@
 .oco{
     width:30px;
     height:30px;
-    float:left
+    float:left;
+    font-size:10px
 }
 .den{
-    background-color:#000
+    background-color:#000;
+    color:#fff
 }
 .trang{
     background-color:#fff
@@ -35,10 +37,22 @@
             
             if(($y+$x)%2 ==0){
             ?>
-            <div class='oco trang' name="huong"></div>
+            <div class='oco trang' name="huong">
+                <?="x = $x"?>
+                <br>
+                <?="y = $y"?>
+            </div>
             <?php
             }
-            else echo '<div class="oco den"></div>';
+            else{
+            ?>
+            <div class="oco den">
+                <?="x = $x"?>
+                <br>
+                <?="y = $y"?>
+            </div>
+            <?php
+            }
         }
     }
     ?>
