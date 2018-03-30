@@ -18,16 +18,16 @@ $arr = [
         ]
     ]
 ];
-echo "<pre>";
-print_r($arr);
-echo "</pre>";
+// echo "<pre>";
+// print_r($arr);
+// echo "</pre>";
 // $subject = $arr['key5'];
 // echo $subject['html']
 
 //echo $arr['key5']['html'];
 
 //echo $arr['key6']['key61']['css']
-echo $arr['key6'][0][0];
+//echo $arr['key6'][0][0];
 
 $arr2 = [
     'value',
@@ -100,6 +100,19 @@ $arrSanpham = [
     ],
 ];
 
-print_r($arrSanpham);
+//print_r($arrSanpham);
+
+foreach($arrSanpham as $sanpham){
+    echo $sanpham['name'];
+    echo "<br>";
+}
+
+echo "<hr>";
+
+for($i=0; $i<count($arrSanpham); $i++){
+    echo $arrSanpham[$i]['name'];
+    echo "<br>";
+    
+}   
 
 ?>
