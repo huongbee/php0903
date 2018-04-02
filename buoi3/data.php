@@ -13,7 +13,7 @@ $arrSanpham = [
         'image'=>'https://cdn.tgdd.vn/Products/Images/42/114114/iphone-8-plus-256gb2-400x460-1-400x460.png'
     ],
     [
-        'name'=>' iPhone X 256GB',
+        'name'=>'iPhone X 256GB',
         'price'=>33450000,
         'image'=>'https://cdn.tgdd.vn/Products/Images/42/114111/iphone-x-256gb-h2-400x460.png'
     ],
