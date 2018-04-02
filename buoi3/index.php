@@ -22,21 +22,27 @@
         //require_once 'data2.php';
 
         foreach($arrSanpham as $sanpham):
+        //print_r($sanpham);
         ?>
             <div class="item">
                 <div class="image">
-                    <img src="images/oppo-f5-red-ah-400x460.png" alt="OPPO F5">
+                    <img src="<?=$sanpham['image']?>" alt="OPPO F5">
                 </div>
                 <div class="info">
-                    <h3>OPPO F5</h3>
+                    <h3><?php echo $sanpham['name']?></h3>
                     <p>Phiếu mua hàng trị giá 100.000đ khi mua online</p>
                     <p>Phiếu mua hàng trị giá 100.000đ khi mua online</p>
                     <p class="promotion">Khuyến mãi: ....</p>
                     <p>Phiếu mua hàng trị giá 100.000đ khi mua online</p>
                 </div>
                 <div class="footer">
-                    <p class="name">OPPO F51</p>
-                    <p class="price">6.990.000 vnđ</p>
+                    <p class="name"><?=$sanpham['name']?></p>
+                    <p class="price">
+                        <?php 
+                            //echo number_format($sanpham['price'])
+                            echo number_format($sanpham['price'],3,'.',',');
+                        ?> 
+                    vnđ</p>
                 </div>
             </div>
         <?php endforeach  ?>

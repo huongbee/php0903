@@ -4,7 +4,7 @@
 $arrSanpham = [
     [
         'name'=>' iPhone 6 32GB',
-        'price'=>8450000,
+        'price'=>8450000.34567,
         'image'=>'https://cdn.tgdd.vn/Products/Images/42/92962/iphone-6-32gb-vang-400-400x460.png'
     ],
     [
