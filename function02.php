@@ -99,8 +99,21 @@ function inSNT($number){
     }
     return $kq;
 }
+
+
+
+    $kq = '';
+    for($i=2; $i< 100; $i++){
+        if(checkSNT($i)){
+            $kq= $kq. $i.' ';
+        }
+    }
+    echo "Dãy các SNT nhỏ hơn 100 là:".$kq;
+
+
+
 $n = 100;
-echo "Dãy các SNT nhỏ hơn $n là: ". inSNT($n);
+//echo "Dãy các SNT nhỏ hơn $n là: ". inSNT($n);
 
 
 //var_dump(checkSNT(19))
