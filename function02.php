@@ -41,20 +41,75 @@ function tang1($a){
 }
 
 
-function PTB1($a , $b){
-    $kq = '';
-    if($a==0){
-        if($b==0) 
-            $kq = "PT có vô số nghiệm";
-        else $kq = "PT vô nghiệm";
+// function PTB1($a , $b){
+//     $kq = '';
+//     if($a==0){
+//         if($b==0) 
+//             $kq = "PT có vô số nghiệm";
+//         else $kq = "PT vô nghiệm";
+//     }
+//     else $kq = -$b/$a;
+//     return $kq;
+// }
+// $a = 2 ; $b = 4;
+
+//echo "Nghiệm của PT $a.x + $b = 0 là: ".PTB1($a,$b);
+
+
+
+
+
+
+// function tongChan($a){
+//     $tong = 0;
+//     for($i = 2;$i<=$a; $i+=2){
+//         $tong+=$i;
+//     }
+//     return $tong;
+// }
+
+
+// function tongChan($a,$b){
+//     $tong = 0;
+//     if($a>=$b) return $tong;
+//     for($i = $a;$i<=$b; $i++){
+//         if($i%2 == 0) $tong +=$i; //tong = tong + i
+//     }
+//     return $tong;
+// }
+
+// echo tongChan(4,5);
+
+
+
+function checkSNT($number){
+    if($number<2) return false;
+
+    for($i = 2; $i<=sqrt($number);  $i++){
+        if($number%$i == 0) return false;
     }
-    else $kq = -$b/$a;
+    return true;
+}
+function inSNT($number){
+    $kq = '';
+    for($i=2; $i< $number; $i++){
+        if(checkSNT($i)){
+            $kq= $kq. $i.' ';
+        }
+    }
     return $kq;
 }
+$n = 100;
+echo "Dãy các SNT nhỏ hơn $n là: ". inSNT($n);
 
 
-$a = 2 ; $b = 4;
+//var_dump(checkSNT(19))
 
-echo "Nghiệm của PT $a.x + $b = 0 là: ".PTB1($a,$b);
+
+
+
+
+
+
 
 ?>
