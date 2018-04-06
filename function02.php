@@ -108,7 +108,7 @@ function inSNT($number){
             $kq= $kq. $i.' ';
         }
     }
-    echo "Dãy các SNT nhỏ hơn 100 là:".$kq;
+    //echo "Dãy các SNT nhỏ hơn 100 là:".$kq;
 
 
 
@@ -119,8 +119,43 @@ $n = 100;
 //var_dump(checkSNT(19))
 
 
+// strlen = 30
+
+function createToken(){
+    $str = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+    
+    $token = '';
+    for($i= 1 ; $i<=30; $i++){
+        $start = rand(0,strlen($str)-1);
+
+        $token .= substr($str,$start,1);
+    }
+    return $token;
+}
+//echo createToken(); //OrcBfX7pUgNGddkE89ewcEnHfMWeO4
+                    //m4lR4k4H1l8FichGeKzMotI3YF4EV8
 
 
+function device($a, $b){
+    if($b == 0) throw new Exception("Can not execute!");
+
+    return $a/$b;
+}
+
+try{
+    
+    echo device(3,0);
+    echo "2345678";
+}
+catch(Exception $e){
+    echo $e->getMessage();
+}
+
+// function device2($a,$b){
+//     if($b==0) return "Can not execute!";
+//     return $a/$b;
+// }
+// echo device2(3,0);
 
 
 
