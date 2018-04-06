@@ -16,34 +16,37 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <h2 class="text-center">Register</h2>
-                <form>
+                <form method="GET" action="register.php">
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" placeholder="Enter name">
+                            <input type="text" name="txtName" class="form-control" placeholder="Enter name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" placeholder="email@example.com">
+                            <input type="email" name="txtEmail" class="form-control" placeholder="email@example.com">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            <input type="password" name="txtPassword" class="form-control" id="inputPassword" placeholder="Password">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Confirm Password</label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control"  placeholder="Confirm Password">
+                            <input type="password" name="txtConfirmPw" class="form-control"  placeholder="Confirm Password">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-sm-8">
-                            <input type="submit" class="btn btn-primary" value="Register">
+                        <div class="col-sm-6">
+                            <input type="submit" name="btnRegister" class="btn btn-primary" value="Register">
+                        </div>
+                        <div class="col-sm-6">
+                           <a href="register.php?id=12">Get ID</a>
                         </div>
                     </div>
                 </form>
