@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <h2 class="text-center">Register</h2>
-                <form method="POST" action="register02.php">
+                <form method="GET" action="register.php">
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
