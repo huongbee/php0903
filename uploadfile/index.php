@@ -20,7 +20,7 @@
                     
                     <div class="form-group row">
                         <div class="col-sm-8">
-                            <input type="file" name="image">
+                            <input type="file" name="image[]" multiple>
                         </div>
                     </div>
                     <div class="form-group row">

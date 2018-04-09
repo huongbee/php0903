@@ -12,7 +12,7 @@ $file = $_FILES['image'];
 // move_uploaded_file($file['tmp_name'],'files/'.$file['name']);
 
 // echo "success";
-//print_r($file);
+print_r($file);
 
 //2018-04-09-20-24-30-13423453-huong.png
 
@@ -22,7 +22,8 @@ date_default_timezone_set('Asia/Ho_chi_minh');
 
 if($file['size'] <= 1024*1024){ 
 
-    $ext = pathinfo($file['name'],PATHINFO_EXTENSION);
+    $ext = strtolower(pathinfo($file['name'],PATHINFO_EXTENSION));
+
     $arrExt = ['png','jpeg','gif','jpg'];
 
     if(in_array($ext,$arrExt)){
@@ -45,6 +46,13 @@ else{
 
 
 //30516596_567284083670368_1628131718621822976_n
+
+//upload multi file
+//check file size < 1Mb 
+//chi cho phep upload file image png/jpeg/gif/jpg
+//rename
+
+// neu co file nao do bi error => rollback all file
 
 
 ?>
