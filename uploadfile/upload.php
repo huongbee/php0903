@@ -21,9 +21,20 @@ date_default_timezone_set('Asia/Ho_chi_minh');
 
 
 if($file['size'] <= 1024*1024){ 
-    $newName = date('Y-m-d-H-i-s',time()).'-'.rand(12345,87654324).'-'.$file['name'];
 
-    move_uploaded_file($file['tmp_name'],'files/'.$newName);
+    $ext = pathinfo($file['name'],PATHINFO_EXTENSION);
+    $arrExt = ['png','jpeg','gif','jpg'];
+    
+    if(){
+        $newName = date('Y-m-d-H-i-s',time()).'-'.rand(12345,87654324).'-'.$file['name'];
+
+        move_uploaded_file($file['tmp_name'],'files/'.$newName);
+    }
+    else{
+        echo "File not allow";
+    }
+
+    
 }
 else{
     echo "File too large!";
