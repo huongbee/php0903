@@ -24,11 +24,12 @@ if($file['size'] <= 1024*1024){
 
     $ext = pathinfo($file['name'],PATHINFO_EXTENSION);
     $arrExt = ['png','jpeg','gif','jpg'];
-    
-    if(){
+
+    if(in_array($ext,$arrExt)){
         $newName = date('Y-m-d-H-i-s',time()).'-'.rand(12345,87654324).'-'.$file['name'];
 
         move_uploaded_file($file['tmp_name'],'files/'.$newName);
+        echo "success";
     }
     else{
         echo "File not allow";
