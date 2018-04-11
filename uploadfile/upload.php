@@ -47,12 +47,5 @@ else{
 
 //30516596_567284083670368_1628131718621822976_n
 
-//upload multi file
-//check file size < 1Mb 
-//chi cho phep upload file image png/jpeg/gif/jpg
-//rename
-
-// neu co file nao do bi error => rollback all file
-
 
 ?>

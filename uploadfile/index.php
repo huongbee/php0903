@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <h2 class="text-center">Upload File</h2>
-                <form method="POST" action="upload.php" enctype="multipart/form-data">
+                <form method="POST" action="upload-multi.php" enctype="multipart/form-data">
                     
                     <div class="form-group row">
                         <div class="col-sm-8">
