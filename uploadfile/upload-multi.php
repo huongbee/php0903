@@ -1,4 +1,5 @@
 <?php
+session_start();
 $images = $_FILES['image'];
 if($images['error'][0]>0){
     echo "Vui long chon file";
@@ -13,12 +14,11 @@ if($images['error'][0]>0){
 
 foreach($images['size'] as $size){
     if($size > 1024*1024){
-        echo "File too large";
+        $_SESSION['error'] = "File too large";
        // header("Refresh:5; url=index.php");
         header("location:index.php");
     }
 }
-die;
 
 $arrExt = ['png','jpeg','gif','jpg'];
 

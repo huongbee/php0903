@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-6">
+
+                
+
                 <h2 class="text-center">Upload File</h2>
+
+                <?php if(isset($_SESSION['error'])):?>
+                    <div class="alert alert-danger">
+                        <?=$_SESSION['error'];
+                           // session_destroy();
+                           unset($_SESSION['error']);
+                           
+                         ?>
+                    </div>
+                <?php endif?>
+
                 <form method="POST" action="upload-multi.php" enctype="multipart/form-data">
                     
                     <div class="form-group row">
