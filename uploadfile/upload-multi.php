@@ -14,21 +14,29 @@ if($images['error'][0]>0){
 foreach($images['size'] as $size){
     if($size > 1024*1024){
         echo "File too large";
-        die;
+       // header("Refresh:5; url=index.php");
+        header("location:index.php");
     }
 }
+die;
 
 $arrExt = ['png','jpeg','gif','jpg'];
 
 foreach($images['name'] as $name){
     $ext = pathinfo($name,PATHINFO_EXTENSION);
 
+    //echo $ext;
     if(!in_array($ext,$arrExt)){
         echo "File not allow";
         die;
     }
 }
 
+foreach($images['tmp_name'] as $key=>$tmp_name){
+
+    $newName = time().'-'.$images['name'][$key];
+    move_uploaded_file($tmp_name,'files/'.$newName);
+}
 echo 'thoa man';
 
 
