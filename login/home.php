@@ -1,10 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user_test'])){
     $_SESSION['error'] = "Bạn vui lòng đăng nhập";
     header("location:login.php");
 }
-
+else{
+    echo $_SESSION['user_test'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,3 +20,6 @@ if(!isset($_SESSION['user'])){
     <a href="logout.php">Logout</a>
 </body>
 </html>
+<?php 
+}
+?>
