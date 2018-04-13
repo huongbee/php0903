@@ -13,7 +13,6 @@
             <div class="col-sm-6">
                 <h2 class="text-center">Login</h2>
 
-
                 <?php 
                 session_start();
                 if(isset($_SESSION['error'])):?>
