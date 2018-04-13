@@ -12,17 +12,30 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <h2 class="text-center">Login</h2>
+
+
+                <?php 
+                session_start();
+                if(isset($_SESSION['error'])):?>
+                    <div class='alert alert-danger'>
+                        <?php 
+                            echo $_SESSION['error']; 
+                            unset($_SESSION['error']);
+                        ?>
+                    </div>
+                <?php endif?>
+
                 <form method="POST" action="xuly.php">
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="email" name="txtEmail" class="form-control" placeholder="email@example.com">
+                            <input type="email" name="txtEmail" class="form-control" placeholder="email@example.com" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" name="txtPassword" class="form-control" id="inputPassword" placeholder="Password">
+                            <input type="password" name="txtPassword" class="form-control" id="inputPassword" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="form-group row">
