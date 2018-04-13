@@ -1,11 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_test'])){
+if(!isset($_SESSION['user_test']) && !isset($_COOKIE['user_test'])){
     $_SESSION['error'] = "Bạn vui lòng đăng nhập";
     header("location:login.php");
 }
-else{
-    echo $_SESSION['user_test'];
+elseif(isset($_COOKIE['user_test'])){
+    $_SESSION['user_test'] = $_COOKIE['user_test'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,3 @@ else{
     <a href="logout.php">Logout</a>
 </body>
 </html>
-<?php 
-}
-?>

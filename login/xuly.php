@@ -10,7 +10,7 @@ if(isset($_POST['btnLogin'])){
 
         //remember me
         if(isset($_POST['remember']) && $_POST['remember'] ==1){
-            setcookie('user_test',$_POST['txtEmail'], time() + 300);
+            setcookie('user_test',$_POST['txtEmail'], time() + 60);
         }
         header('Location:home.php');
         
