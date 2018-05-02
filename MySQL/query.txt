@@ -2,57 +2,151 @@ Truy vấn lọc dữ liệu
 Yêu cầu: Thực hiện các câu truy vấn sau trên CSDL db_banhang
 
 1.  Liệt kê danh sách sản phẩm
-
+	SELECT * FROM foods
 
 
 1.1. Liệt kê danh sách sản phẩm gồm có tên Tên sp,Đơn giá, Hình.
+	SELECT name,price, image
+	FROM foods
 
 
 
-3. Liệt kê danh sách khách hàng gồm có các thông tin sau: tên khách hàng, giới tính, địa chỉ, điện thoại, 
-	danh sách sẽ được s ắp tăng dần theo tên khách hàng.
+3. Liệt kê danh sách khách hàng gồm có các thông tin sau: tên khách hàng, giới tính, địa chỉ, điện thoại, danh sách sẽ được sắp tăng dần theo tên khách hàng.
+	
+	SELECT name,gender
+	FROM customers
+	ORDER BY name DESC
+
 
 4. Liệt kê danh sách sản phẩm gồm có: Tên sp, Mô tả, Đơn giá, và sắp xếp giảm theo cột đơn giá: 
+	SELECT name, price
+	FROM foods
+	ORDER BY price DESC
+
+
 
 5. Liệt kê danh sách sản phẩm gồm có: Tên sp, Mô tả, Đơn giá. Chỉ liệt kê các Sản phẩm súp
+	SELECT name, price
+	FROM foods
+	WHERE name LIKE '%súp%'
+
+
 
 6. Liệt kê danh sách sản phẩm mà trong tên sp có từ ‘hạt sen' và giá lớn hơn 160000:
+	SELECT name, price
+	FROM foods
+	WHERE name LIKE '%hạt sen%'
+	AND price > 160000
 
-7. Liệt kê danh sách các Sản phẩm có đơn giá từ 50.000 VNĐ đến 100.000 VNĐ :
+
+7. Liệt kê danh sách các Sản phẩm có đơn giá từ 50.000 VNĐ đến 100.000 VNĐ:
+	SELECT *
+	FROM foods
+	WHERE price BETWEEN 50000 AND 100000
+
+	SELECT *
+	FROM foods
+	WHERE price >= 50000
+	AND price <= 100000
+
 
 9. Liệt kê các sản phẩm có đơn giá lớn hơn 150.000 VNĐ
+	SELECT *
+	FROM foods
+	WHERE price > 150000
 
-10. Liệt kê thông tin các sản phẩm có tên 'Cơm tấm', 'Dưa hấu', 'Xôi gà'. //orWhere()
+
+10. Liệt kê thông tin các sản phẩm có tên 'Cơm tấm', 'Dưa hấu', 'Xôi gà'. 
+	SELECT *
+	FROM foods
+	WHERE name LIKE "%Cơm tấm%"
+	OR name LIKE "%dưa hấu%"
+	OR name LIKE "%xôi gà%"
 
 11. Cho biết tên sản phẩm, Mô tả, đơn giá của 10 sản phẩm có đơn giá cao nhất.
+	SELECT *
+	FROM foods
+	ORDER BY price DESC
+	LIMIT 0,10
 
 12. Liệt kê danh sách sản phẩm gồm có tênsp, đơn giá, khuyến mãi.
 
+
+
 13. Liệt kê danh sách khách hàng gồm có các thông tin sau: tên khách hàng, email, địa chỉ, điện thoại.
+
+	SELECT name, email, address
+	FROM customers
+
+
+
 
 14. Liệt kê danh sách loại sản phẩm gồm có các thông tin sau: tên loại, mô tả, sắp tăng dần theo tên loại.
 
-15. Liệt kê danh sách sản phẩm gồm có: tên sản phẩm, Mô tả. Có sắp tăng theo cột tên sp, và sắp giảm theo cột đơn giá.
 
-16. Liệt kê danh sách tin tức: tiêu đề, tóm tắt. Chỉ liệt kê các tin tức có tiêu đề bắt đầu là 'N'.
+15. Liệt kê danh sách sản phẩm gồm có: tên sản phẩm, Mô tả. Có sắp tăng theo cột tên sp, và sắp giảm theo cột đơn giá.
+	SELECT name, price
+	FROM foods
+	ORDER BY name ASC, price DESC 
+
+
+
+16. Liệt kê danh sách món ăn: tiêu đề, tóm tắt. Chỉ liệt kê các món ăn  có Tên bắt đầu là 'N'.
+	LIKE 'N%'
 
 17. Liệt kê danh sách các sản phẩm có ký tự cuối cùng của sp là 'n'.
+	LIKE '%n'
 
 18. Liệt kê danh sách sản phẩm mà trong tên sản phẩm có từ 'gà'.
+	WHERE name LIKE '%gà%'
 
 20. Liệt kê danh sách các sản phẩm có đơn giá từ 50.000 VNĐ đến 150.000 VNĐ
-
+	#7
 21. Liệt kê các sản phẩm có nội dung tóm tắt chứa 'nấm' và 'ớt xanh', gồm các thông tin: tên sp, đơn giá.
 
+
 22. Cho biết đơn giá trung bình của các sp hiện có trong cửa hàng
+	SELECT avg(price) AS DGTB
+	FROM foods
+
+	SELECT min(price) AS minprice
+	FROM foods
+
+	SELECT sum(price)/count(price) AS tong
+	FROM foods
+
+	SELECT count(price) AS soluong
+	FROM foods
 
 LIÊN KẾT BẢNG
 
-2. Liệt kê danh sách sản phẩm gồm có tên Tên loại, Tên sp, Mô tả, Đơn giá và sắp xếp Tên loại theo chiều tăng dần.
+2. Liệt kê danh sách sản phẩm gồm có tên loại, Tên sp, Mô tả, Đơn giá và sắp xếp Tên loại theo chiều tăng dần.
+	SELECT t.name as nameType, f.name as nameFood , detail, price
+	FROM foods f, food_type t, page_url p
+	WHERE f.id_type = t.id
+	AND  p.id = f.id_url
+	ORDER BY nameType ASC
+
+	SELECT t.name as nameType, f.name as nameFood , detail, price, p.url
+	FROM foods f
+	INNER JOIN food_type t 
+	ON f.id_type = t.id
+	INNER JOIN page_url p 
+	ON p.id = f.id_url
+	ORDER BY nameType ASC
+
+
 
 2.2. Truy vấn có nhóm và thống kê dữ liệu. Yêu cầu: Thực hiện các truy vấn sau
 
 1. Thống kê tổng số sản phẩm theo Loại, gồm các thông tin: Tên Loại sản phẩm, tổng số sản phẩm, có sắp tăng theo tổng số sản phẩm
+	SELECT t.name, count(f.id) AS tongSP
+	FROM foods f
+	INNER JOIN food_type t 
+	ON f.id_type = t.id
+	GROUP BY t.name
+	ORDER BY tongSP ASC
+
 
 2. Cho biết đơn giá trung bình của sản phẩm theo từng Loại sản phẩm.
 
