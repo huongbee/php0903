@@ -9,28 +9,42 @@ class DBConnect{
         $this->connect->exec("set names utf8");
     }
 
-    //sd cho lenh INSERT/UPDATE/DELETE
-    function executeQuery($sql, $options = []){
 
+    function setStatement($sql, $options = []){
         $stmt = $this->connect->prepare($sql);
         for($i = 1; $i<= count($options); $i++){
             $stmt->bindValue($i, $options[$i-1]);
             //$stmt->bindValue($i+1, $options[$i]);
         }
+        return $stmt;
+    }
+
+    //sd cho lenh INSERT/UPDATE/DELETE
+    function executeQuery($sql, $options = []){
+        $stmt = $this->setStatement($sql,$options);
         return $stmt->execute();
     }
-}
-$con = new DBConnect();
 
-$sql = "INSERT INTO users(email,fullname,address, password,birthdate)
-        VALUES  (?,?, ?, ?,?)";
-$options = [
-    'huong@gmail.commm',
-    'huonghuong',
-    'q1',
-    '12345',
-    '2015-2-9'
-];
-$check = $con->executeQuery($sql, $options);
-var_dump($check);
+    // sd cho cau SELECT return 1 data
+    function loadOneRow($sql,$options = []){
+        $stmt = $this->setStatement($sql,$options);
+        $check = $stmt->execute();
+        if($check){
+            return $stmt->fetch(PDO::FETCH_OBJ); 
+        }   
+        else return false;
+    }
+
+    //sd cho cau SELECT return more datas
+    function loadMoreRows($sql,$options=[]){
+        $stmt = $this->setStatement($sql,$options);
+        $check = $stmt->execute();
+        if($check){
+            return $stmt->fetchAll(PDO::FETCH_OBJ); 
+        }   
+        else return false;
+    }
+
+}
+
 ?>
